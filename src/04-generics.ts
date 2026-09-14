@@ -8,7 +8,7 @@ function findMatch<T>( data : T[], criteria: (d: T) => boolean ) : T | undefined
 // console.log(findMatch<Friend>(friends, (f) => f.name.startsWith('Jane')  ))
 // console.log(findMatch<Colleague>(colleagues.current, (c) => c.department === 'Finance'  ))
 
-function sort<T>(data : Array<T>, criteria: (a: T, b: T) => number): Array<T>{
+function sort<T>(data : Array<T>, criteria: (a: T, b: T) => number){
     return [...data].sort(criteria);
 }
 
