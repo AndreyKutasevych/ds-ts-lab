@@ -70,10 +70,7 @@ const currentOrder : OrderLine[] = [risotto, lunchCombo, soup];
 //     rely on *type inference* (check the inferred signature with VS Code's
 //     intellisense before you decide).
 
-function describe(item: OrderLine): string {
-    if ("items" in item) {
-        return `${item.name} (combo) - EUR ${item.price.toFixed(2)}`;
-    }
+function describe(item: MenuItem) {
     return `${item.name} (${item.course}) - EUR ${item.price.toFixed(2)}`;
 }
 
@@ -163,6 +160,6 @@ console.log(allergyCard(brownie));
 
 // TS: Three more lines below are bugs that only the compiler can see. Once
 //     your types are in place, fix each one and note it in your commit message.
-console.log(describe(lunchCombo));
+console.log(describe(lunchCombo.items[0]));
 console.log(updateItem(soup, { price: 7.00 }));
 console.log(firstMatch(menu, (i) => i.nutrition.calories < 300));
